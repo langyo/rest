@@ -98,7 +98,7 @@ func (q *URLQuery) WhereQuery(index uint) (newIndex uint, query string, args []a
 			continue
 		}
 		for _, vv := range v {
-			vals := strings.Split(vv, ".")
+			vals := strings.SplitN(vv, ".", 2)
 			if len(vals) != 2 {
 				continue
 			}
